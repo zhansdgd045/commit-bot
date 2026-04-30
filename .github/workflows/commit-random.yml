@@ -26,11 +26,11 @@ jobs:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
           
           # 必须使用脚本能识别的变量名 
-          SKIP_PROB: "0.1"                # 跳过概率
-          MAX_COMMITS: "2"               # 每次运行最大提交数
-          MIN_SLEEP: "1"                 # 提交间最短睡眠
-          MAX_SLEEP: "5"                 # 提交间最长睡眠
-          MAX_START_DELAY_MINUTES: "1"   # 启动延迟从默认 60 改为 1 分钟
+          SKIP_PROB: "0.08"               # 休息概率
+          MAX_COMMITS: "3"                # 每次运行最多提交次数
+          MIN_SLEEP: "15"                 # 提交间最短等待（秒）
+          MAX_SLEEP: "120"                # 提交间最长等待（秒）
+          MAX_START_DELAY_MINUTES: "60"   # 启动前随机延迟（分钟）
           
         run: |
           chmod +x .github/scripts/random_commit.py
